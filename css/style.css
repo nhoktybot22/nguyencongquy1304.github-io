@@ -1,7 +1,6 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     width: 100%;
     overflow-x: hidden;
@@ -9,7 +8,7 @@ body {
 
 /*Common CSS*/
 .font-openSan {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -56,17 +55,27 @@ body {
 }
 
 /*Header*/
+.header.isFixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+
+}
 .header {
     height: 90px;
+    background: #fff;
     display: flex;
     align-items: center;
+    transition: all .3s;
 }
 .header__main {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.logo img {
+.logo img{
     width: 125px;
 }
 .menu {
@@ -77,17 +86,17 @@ body {
     font-weight: bold;
     margin-left: 25px;
     color: #000;
-    transition: all 0.3s;
+    transition: all .3s;
 }
 .menu__item:hover {
-    color: #f05b95;
+    color: #F05B95;
 }
 
 /*Visual*/
-.visual {
+.visual{
     width: 100%;
     height: 470px;
-    background-image: url("../images/visual_why.jpg");
+    background-image: url('../images/visual_why.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -116,7 +125,8 @@ body {
     padding: 70px 0;
 }
 .dreamList {
-    margin-top: 70px;
+    margin: 70px auto 0;
+    max-width: 950px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -125,20 +135,66 @@ body {
 .dreamList h3 {
     font-size: 20px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 10px
 }
 
 .dreamList p {
     font-size: 40px;
     margin-top: 5px;
     font-weight: bold;
-    color: #f05b95;
+    color: #F05B95;
 }
+.dreamBg {
+    position: absolute;
+    bottom: 210px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    z-index: -1;
+}
+.dreamBg__shortLine {
+    width: 50px;
+    height: 2px;
+    background: #999;
+    display: block;
+}
+.dreamBg__longLine{
+    width: 100%;
+    height: 2px;
+    background: #999;
+    display: block;
+    margin-top: 50px;
+    position: relative;
+}
+.dreamBg__longLine:before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #999;
+    position: absolute;
+    top: -7px;
+    left: calc(50% - 200px);
+}
+.dreamBg__longLine:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #999;
+    position: absolute;
+    top: -7px;
+    right: calc(50% - 200px);
+}
+
+
 /*Marketing*/
 .marketing {
-    height: 900px;
+    height: 770px;
     padding: 70px 0;
-    background-image: url("../images/creative.jpg");
+    background-image: url('../images/creative.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -149,6 +205,50 @@ body {
 }
 .marketing .sec__ttl:after {
     background: #fff;
+}
+.marketing__line {
+    position: absolute;
+    width: 100%;
+    bottom: 255px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+}
+.marketingList {
+    max-width: 1200px;
+    margin: 378px auto 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.marketingList__item {
+    width: 25%;
+}
+.marketingList__img {
+    margin-bottom: 10px;
+}
+
+.marketingList__ttl {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.marketingList__txt {
+    color: #fff;
+    font-size: 18px;
+}
+.marketingList__line {
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    display: block;
+    margin: 10px auto;
+}
+.marketingList__des {
+    color: #fff;
+    font-size: 14px;
 }
 /*Why*/
 .why {
@@ -172,12 +272,12 @@ body {
     font-size: 70px;
     line-height: 1.2;
     font-weight: bold;
-    color: #f05b95;
+    color: #F05B95;
 }
 .whyFlame__txt {
     font-size: 20px;
     font-weight: bold;
-    margin: 10px 0 15px 0;
+    margin: 10px 0 15px 0
 }
 .whyFlame__des {
     font-size: 16px;
@@ -185,7 +285,7 @@ body {
 }
 /*Conference*/
 .conference {
-    background-image: url("../images/conference_bg.gif");
+    background-image: url('../images/conference_bg.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -223,12 +323,12 @@ body {
     padding: 10px 0;
     display: block;
     color: #fff;
-    background: #f05b95;
+    background: #F05B95;
     font-size: 16px;
     text-align: center;
 }
 .conferenceFlame__button:hover {
-    opacity: 0.7;
+    opacity: .7;
 }
 
 /*Contact*/
@@ -254,17 +354,16 @@ body {
     color: #000;
 }
 .contact__button:hover {
-    opacity: 0.7;
+    opacity: .7;
 }
 /*Plane*/
 .plane {
     padding: 50px 0;
-    background-image: url("../images/bot_info.jpg");
+    background-image: url('../images/bot_info.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-
 .plane__main {
     text-align: center;
 }
@@ -294,7 +393,7 @@ body {
     text-align: center;
 }
 .plane__button:hover {
-    opacity: 0.7;
+    opacity: .7;
 }
 /*Footer*/
 .footer {
